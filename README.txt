@@ -1,6 +1,39 @@
-1. I compiled my code by running mkdir build, cd build, cmake .., and make. I reran make each time with edits and
-had to go into my build folder to run ./assignment4 followed by the input scene, output text, and bounces. I tested with MacOS.
-2. The OpenGL online textbook was really helpful to reference libraries and syntax.
-3. There were some warnings that time was initialized after system, but the code still worked.
-4. I didn't do any extra credits due to a time crunch from midterms this week.
-5. This was such a fun project and being an architecure major, it's cool to see the code behind my renderings.
+This project implements environment mapping and sky shading in OpenGL. It includes rendering a skybox, sampling environment maps, and applying reflective materials using cube maps. The project demonstrates how direction vectors from the camera are used to fetch texels from an environment texture to produce realistic lighting and reflections.
+
+**Features**
+- Skybox rendering using cube-map textures  
+- Environment map sampling for reflective surfaces  
+- Real-time shading based on view direction  
+- Configurable camera and scene setup  
+- Simple scene demonstrating reflective materials
+
+**How to Run**
+1. Clone the repository  
+2. Build using CMake  
+3. Run the executable from your build directory  
+4. Move the camera to see reflections update in real time
+
+**Project Structure**
+- src/: core rendering and application logic  
+- shaders/: vertex + fragment shaders for skybox and environment shading  
+- includes/: utilities (shader loader, camera controls)  
+- resources/: skybox textures and sample cube maps
+
+**Dependencies**
+- OpenGL 3.3+  
+- GLFW  
+- GLAD  
+- glm math library  
+- CMake
+
+**Controls**
+- WASD → move camera  
+- Mouse → rotate camera view  
+- R → reset camera  
+- F → toggle reflection mode (if implemented)
+
+**Future Improvements**
+- Image-based lighting (IBL) with irradiance and prefiltered maps  
+- Roughness-based reflections (GGX)  
+- Procedural sky generation  
+- HDR support and tone mapping 
